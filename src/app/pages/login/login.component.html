@@ -1,2 +1,39 @@
-LOGIN
-<a routerLink="/home">HOME</a>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 col-offset-4 mx-auto">
+            <h3 class="panel-title">Login</h3>
+            <div class="panel-body">
+                <form role="form">
+                    <fieldset>
+                        <div class="form-group my-2">
+                            <input class="form-control" placeholder="Username" [(ngModel)]="password" name="username" type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-10 pr-0">
+                                    <input class="form-control" [(ngModel)]="password" placeholder="Password" name="password" [type]="toggleType" required>
+                                </div>
+                                <div class="col-2 pl-0">
+                                    <button class="btn btn-primary btn-inline" (click)="showPassword()">show</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkbox mb-2">
+                            <label>
+                                <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                            </label>
+                        </div>
+                        <div class="row">
+                            <div class="col text-center">
+                                <input type="submit" class="btn btn-md btn-success btn-block" value="Login">
+                            </div>
+                            <div class="col text-center">
+                                <button routerLink="/home" class="btn btn-md btn-success btn-block">Home</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
