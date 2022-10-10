@@ -1,46 +1,93 @@
-<main class="form-signin w-100 m-auto mt-3">
-    <form class="row g-3">
-        <div class="col-md-6">
-            <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-6">
-            <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
-        </div>
-        <div class="col-12">
-            <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="col-12">
-            <label for="inputAddress2" class="form-label">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-        </div>
-        <div class="col-md-6">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-            </select>
-        </div>
-        <div class="col-md-2">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip">
-        </div>
-        <div class="col-12">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
-            </div>
-        </div>
-        <div class="col-12">
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </div>
-    </form>
-</main>
+<div class="container w-50 mx-auto mt-3">
+    <mat-tab-group>
+        <mat-tab label="Persona fisica">
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome">
+                </div>
+                <div class="col-md-6">
+                    <label for="cognome" class="form-label">Cognome</label>
+                    <input type="text" class="form-control" id="cognome">
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="col-md-6">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input type="number" class="form-control" id="telefono">
+                </div>
+                <div class="col-md-6 mt-3">
+                    <label for="sesso" class="form-label">Sesso</label><br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sesso" id="maschio" value="option1">
+                        <label class="form-check-label" for="maschio">Maschio</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="sesso" id="femmina" value="option2">
+                        <label class="form-check-label" for="femmina">Femmina</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="cod-fiscale" class="form-label">Codice fiscale</label>
+                    <input type="text" class="form-control" id="cod-fiscale">
+                </div>
+
+                <label class="form-label">Indirizzo</label>
+                <div class="input-group mb-3">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected disabled>Scegli</option>
+                        <option value="1">Via</option>
+                        <option value="2">Corso</option>
+                        <option value="3">Piazza</option>
+                    </select>
+                    <input type="text" class="form-control" id="indirizzo">
+                </div>
+
+                <div class="col-12">
+                    <label for="comune" class="form-label">Localit&agrave;/Comune</label>
+                    <input type="text" class="form-control" id="comune">
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Address 2</label>
+                    <input type="text" class="form-control" id="inputAddress2"
+                        placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="col-md-6">
+                    <label for="comune" class="form-label">Localit&agrave;/Comune</label>
+                    <input type="text" class="form-control" id="comune">
+                </div>
+                <div class="col-md-4">
+                    <label for="provincia" class="form-label">Provincia</label>
+                    <input type="text" class="form-control" id="provincia">
+                </div>
+                <!-- <div class="col-md-4">
+                    <label for="inputState" class="form-label">State</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Choose...</option>
+                        <option>...</option>
+                    </select>
+                </div> -->
+                <div class="col-md-2">
+                    <label for="cap" class="form-label">CAP</label>
+                    <input type="text" class="form-control" id="cap">
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="maggiorenne">
+                        <label class="form-check-label" for="maggiorenne">
+                            Dichiaro di avere pi&ugrave; di 18 anni di et&agrave;
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Registrati</button>
+                </div>
+            </form>
+        </mat-tab>
+
+        <mat-tab label="Persona giuridica">indiana pipps</mat-tab>
+    </mat-tab-group>
+
+</div>
