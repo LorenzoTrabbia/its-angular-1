@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -6,18 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  username = "";
-  password = "";
-  clearPassword = false;
-  toggleType = "password";
+  jsonIn = {
+    username: '',
+    password: '',
+    rememberMe: false,
+  }
+  @ViewChild('loginForm') loginForm!: NgForm;
+  showErrors = false;
+  showPassword = false;
+  
+  constructor(private router: Router) {}
 
-  showPassword() {
-    if (this.clearPassword == false) {
-      this.clearPassword = true;
-      this.toggleType = "text";
+  signIn() {
+    if (this.loginForm.form.invalid) {
+      this.showErrors = true;
     } else {
-      this.clearPassword = false;
-      this.toggleType = "password";
+      this.router.navigateByUrl('/home');
     }
   }
+
+
 }
