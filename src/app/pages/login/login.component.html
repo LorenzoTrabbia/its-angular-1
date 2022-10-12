@@ -1,93 +1,235 @@
 <div class="container w-50 mx-auto mt-3">
-    <mat-tab-group>
+    <mat-tab-group mat-align-tabs="center">
         <mat-tab label="Persona fisica">
-            <form class="row g-3">
+            <form class="row g-3 mt-2 m-0 needs-validation" [class.was-validated]="showErrorsFisica"
+                #loginFormFisica="ngForm">
                 <div class="col-md-6">
                     <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome">
+                    <input type="text" class="form-control" id="nome" [(ngModel)]="jsonInFisica.nome" name="nome"
+                        required>
                 </div>
                 <div class="col-md-6">
                     <label for="cognome" class="form-label">Cognome</label>
-                    <input type="text" class="form-control" id="cognome">
+                    <input type="text" class="form-control" id="cognome" [(ngModel)]="jsonInFisica.cognome"
+                        name="cognome" required>
                 </div>
                 <div class="col-md-6">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" id="email" [(ngModel)]="jsonInFisica.email" name="email"
+                        required>
                 </div>
                 <div class="col-md-6">
                     <label for="telefono" class="form-label">Telefono</label>
-                    <input type="number" class="form-control" id="telefono">
+                    <input type="string" class="form-control" id="telefono" [(ngModel)]="jsonInFisica.telefono"
+                        name="telefono" required>
                 </div>
                 <div class="col-md-6 mt-3">
                     <label for="sesso" class="form-label">Sesso</label><br />
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="sesso" id="maschio" value="option1">
+                        <input class="form-check-input" type="radio" id="maschio" value="maschio"
+                            [(ngModel)]="jsonInFisica.maschio" name="sesso" required>
                         <label class="form-check-label" for="maschio">Maschio</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="sesso" id="femmina" value="option2">
-                        <label class="form-check-label" for="femmina">Femmina</label>
+                        <input class="form-check-input" type="radio" id="femmina" value="femmina"
+                            [(ngModel)]="jsonInFisica.femmina" name="sesso">
+                        <label class="form-check-label" for="femmina" required>Femmina</label>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <label for="cod-fiscale" class="form-label">Codice fiscale</label>
-                    <input type="text" class="form-control" id="cod-fiscale">
+                    <input type="text" class="form-control" id="cod-fiscale" [(ngModel)]="jsonInFisica.cod_fiscale"
+                        name="cod_fiscale" required>
                 </div>
 
                 <label class="form-label">Indirizzo</label>
                 <div class="input-group mb-3">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected disabled>Scegli</option>
-                        <option value="1">Via</option>
-                        <option value="2">Corso</option>
-                        <option value="3">Piazza</option>
+                    <select class="form-select" [(ngModel)]="jsonInFisica.tipo_indirizzo" name="tipo-indirizzo">
+                        <option value="via" selected>Via</option>
+                        <option value="corso">Corso</option>
+                        <option value="piazza">Piazza</option>
                     </select>
-                    <input type="text" class="form-control" id="indirizzo">
+                    <input type="text" class="form-control" id="indirizzo" [(ngModel)]="jsonInFisica.indirizzo"
+                        name="indirizzo" required>
                 </div>
 
                 <div class="col-12">
                     <label for="comune" class="form-label">Localit&agrave;/Comune</label>
-                    <input type="text" class="form-control" id="comune">
+                    <input type="text" class="form-control" id="comune" [(ngModel)]="jsonInFisica.comune" name="comune"
+                        required>
                 </div>
-                <div class="col-12">
-                    <label for="inputAddress2" class="form-label">Address 2</label>
-                    <input type="text" class="form-control" id="inputAddress2"
-                        placeholder="Apartment, studio, or floor">
-                </div>
-                <div class="col-md-6">
-                    <label for="comune" class="form-label">Localit&agrave;/Comune</label>
-                    <input type="text" class="form-control" id="comune">
+                <div class="col-md-8">
+                    <label for="provincia" class="form-label">Provincia</label>
+                    <input type="text" class="form-control" id="provincia" [(ngModel)]="jsonInFisica.provincia"
+                        name="provincia" required>
                 </div>
                 <div class="col-md-4">
-                    <label for="provincia" class="form-label">Provincia</label>
-                    <input type="text" class="form-control" id="provincia">
-                </div>
-                <!-- <div class="col-md-4">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
-                </div> -->
-                <div class="col-md-2">
                     <label for="cap" class="form-label">CAP</label>
-                    <input type="text" class="form-control" id="cap">
+                    <input type="number" class="form-control" id="cap" [(ngModel)]="jsonInFisica.cap" name="cap"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <label for="pec" class="form-label">PEC</label>
+                    <input type="text" class="form-control" id="pec" [(ngModel)]="jsonInFisica.pec" name="pec" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="fax" class="form-label">FAX</label>
+                    <input type="text" class="form-control" id="fax" [(ngModel)]="jsonInFisica.fax" name="fax">
+                </div>
+                <div>
+                    <label for="prodotti">Assicurazioni interessanti</label><br />
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="auto" id="auto"
+                            [(ngModel)]="jsonInFisica.prodotto_auto" name="auto">
+                        <label class="form-check-label" for="auto">
+                            Auto
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="vita" id="vita"
+                            [(ngModel)]="jsonInFisica.prodotto_vita" name="vita">
+                        <label class="form-check-label" for="vita">
+                            Vita
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="salute" id="salute"
+                            [(ngModel)]="jsonInFisica.prodotto_salute" name="salute">
+                        <label class="form-check-label" for="salute">
+                            Salute
+                        </label>
+                    </div>
                 </div>
                 <div class="col-12">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="maggiorenne">
+                        <input class="form-check-input" type="checkbox" id="maggiorenne"
+                            [(ngModel)]="jsonInFisica.maggiorenne" name="maggiorenne" required>
                         <label class="form-check-label" for="maggiorenne">
                             Dichiaro di avere pi&ugrave; di 18 anni di et&agrave;
                         </label>
                     </div>
                 </div>
                 <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Registrati</button>
+                    <button type="submit" class="btn btn-primary" (click)="signIn()">Registrati</button>
                 </div>
             </form>
         </mat-tab>
 
-        <mat-tab label="Persona giuridica">indiana pipps</mat-tab>
+        <mat-tab label="Persona giuridica">
+            <form class="row g-3 mt-2 m-0 needs-validation" [class.was-validated]="showErrorsGiuridica"
+                #loginFormGiuridica="ngForm">
+                <div class="col-md-6">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" [(ngModel)]="jsonInGiuridica.nome" name="nome"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <label for="cognome" class="form-label">Cognome</label>
+                    <input type="text" class="form-control" id="cognome" [(ngModel)]="jsonInGiuridica.cognome"
+                        name="cognome" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" [(ngModel)]="jsonInGiuridica.email" name="email"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <label for="telefono" class="form-label">Telefono</label>
+                    <input type="string" class="form-control" id="telefono" [(ngModel)]="jsonInGiuridica.telefono"
+                        name="telefono" required>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <label for="sesso" class="form-label">Sesso</label><br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="maschio" value="maschio"
+                            [(ngModel)]="jsonInGiuridica.maschio" name="sesso" required>
+                        <label class="form-check-label" for="maschio">Maschio</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="femmina" value="femmina"
+                            [(ngModel)]="jsonInGiuridica.femmina" name="sesso">
+                        <label class="form-check-label" for="femmina" required>Femmina</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="cod-fiscale" class="form-label">Codice fiscale</label>
+                    <input type="text" class="form-control" id="cod-fiscale" [(ngModel)]="jsonInGiuridica.cod_fiscale"
+                        name="cod_fiscale" required>
+                </div>
+
+                <label class="form-label">Indirizzo</label>
+                <div class="input-group mb-3">
+                    <select class="form-select" [(ngModel)]="jsonInGiuridica.tipo_indirizzo" name="tipo-indirizzo">
+                        <option value="via" selected>Via</option>
+                        <option value="corso">Corso</option>
+                        <option value="piazza">Piazza</option>
+                    </select>
+                    <input type="text" class="form-control" id="indirizzo" [(ngModel)]="jsonInGiuridica.indirizzo"
+                        name="indirizzo" required>
+                </div>
+
+                <div class="col-12">
+                    <label for="comune" class="form-label">Localit&agrave;/Comune</label>
+                    <input type="text" class="form-control" id="comune" [(ngModel)]="jsonInGiuridica.comune"
+                        name="comune" required>
+                </div>
+                <div class="col-md-8">
+                    <label for="provincia" class="form-label">Provincia</label>
+                    <input type="text" class="form-control" id="provincia" [(ngModel)]="jsonInGiuridica.provincia"
+                        name="provincia" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="cap" class="form-label">CAP</label>
+                    <input type="number" class="form-control" id="cap" [(ngModel)]="jsonInGiuridica.cap" name="cap"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <label for="pec" class="form-label">PEC</label>
+                    <input type="text" class="form-control" id="pec" [(ngModel)]="jsonInGiuridica.pec" name="pec"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <label for="fax" class="form-label">FAX</label>
+                    <input type="text" class="form-control" id="fax" [(ngModel)]="jsonInGiuridica.fax" name="fax">
+                </div>
+                <div>
+                    <label for="prodotti">Assicurazioni interessanti</label><br />
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="auto" id="auto"
+                            [(ngModel)]="jsonInGiuridica.prodotto_auto" name="auto">
+                        <label class="form-check-label" for="auto">
+                            Auto
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="vita" id="vita"
+                            [(ngModel)]="jsonInGiuridica.prodotto_vita" name="vita">
+                        <label class="form-check-label" for="vita">
+                            Vita
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="checkbox" value="salute" id="salute"
+                            [(ngModel)]="jsonInGiuridica.prodotto_salute" name="salute">
+                        <label class="form-check-label" for="salute">
+                            Salute
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="maggiorenne"
+                            [(ngModel)]="jsonInGiuridica.maggiorenne" name="maggiorenne" required>
+                        <label class="form-check-label" for="maggiorenne">
+                            Dichiaro di avere pi&ugrave; di 18 anni di et&agrave;
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary" (click)="signInGiuridica()">Registrati</button>
+                </div>
+            </form>
+        </mat-tab>
     </mat-tab-group>
 
 </div>
